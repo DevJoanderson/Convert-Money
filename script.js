@@ -13,6 +13,9 @@ function convertValues() {
   const dolarToday = 5.8;
   const euroToday = 6.2;
   const bitcoinToday = 608.683;
+  const libraesterlinaToday = 7.5;
+  const younchinesToday = 0.85;
+  const lenejaponesTodas = 0.0065;
 
   if (currencySelect.value == "dolar") {
     currencyValueConvertd.innerHTML = new Intl.NumberFormat("en-US", {
@@ -34,6 +37,25 @@ function convertValues() {
     }).format(inputCurrencyValue / bitcoinToday);
   }
 
+  if (currencySelect.value == "libraesterlina") {
+    currencyValueConvertd.innerHTML = new Intl.NumberFormat("en-UTC", {
+      style: "currency",
+      currency: "GBP",
+    }).format(inputCurrencyValue / libraesterlinaToday);
+  }
+
+  if (currencySelect.value == "younchines") {
+    currencyValueConvertd.innerHTML = new Intl.NumberFormat("角", {
+        style: "currency",
+        currency: "CNY",
+    }).format(inputCurrencyValue / younchinesToday);
+  }
+  if (currencySelect.value == "lenejapones") {
+    currencyValueConvertd.innerHTML = new Intl.NumberFormat("¥",{
+        style: "currency",
+        currency: "JPY",
+    }).format(inputCurrencyValue / lenejaponesTodas);
+  }
   currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
@@ -58,6 +80,22 @@ function chageCurrency() {
     currencyName.innerHTML = "Bitcoin";
     currencyImage.src = "./assets/bitcoin 1.png";
   }
+
+  if (currencySelect.value == "libra") {
+    currencyName.innerHTML = "Libra Esterlina";
+    currencyImage.src = "./assets/libra 1.png";
+  }
+
+  if (currencySelect.value == "yuanchines") {
+    currencyName.innerHTML = "Yuan Chinês";
+    currencyImage.src = "./assets/china.png"
+  }
+
+  if (currencySelect.value == "lenejapones") {
+    currencyName.innerHTML = "Line Japones";
+    currencyImage.src = "./assets/"
+  }
+
   convertValues();
 }
 
